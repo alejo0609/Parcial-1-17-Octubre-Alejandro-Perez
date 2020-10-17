@@ -28,19 +28,20 @@ int main(int argc, char *argv[])
     // Definir variables de inicialización
     Pos_X_Canyon = 0.0;
     Pos_Y_Canyon = 0.0;
-    cout<<"\nPosicion X del blanco.....: ";
+    printf("\nPosicion X del blanco.....: ");
     scanf(" %lf",&Pos_X_Blanco);
-    cout<<"Posicion Y del blanco.....: ";
+    printf("Posicion Y del blanco.....: ");
     scanf(" %lf",&Pos_Y_Blanco);
-    //cout<<"Velocidad Inicial.........: ";
-    //cin>>" %lf",&Velocidad;
-    // Petición de los intentos
+    //printf("Velocidad Inicial.........: ");
+    //scanf(" %lf",&Velocidad);
+    // realizar la petición de los intentos
     intentos=0;
-    cout<<"ACIERTO = "<<acierto<<endl;
+
+
     while(intentos<3 && acierto==0)
     {
        cout<<"Angulo......: ";
-       cout<<" %lf",&Angulo;
+       scanf(" %lf",&Angulo);
        Radianes=(Angulo/180.0)*PI;
       // Calculo de la distancia Y
       //DistanciaY=(Velocidad*(sin(Radianes))*Tiempo)-((1/2)*Gravedad*(Tiempo*Tiempo));
@@ -49,7 +50,7 @@ int main(int argc, char *argv[])
        RedondeoDistanciaY=DistanciaY;
        RedondeoPosY=Pos_Y_Blanco;
        if ( RedondeoPosY+1>= RedondeoDistanciaY && RedondeoPosY-1<=RedondeoDistanciaY ) {
-          cout<<"Has Acertado\n";
+          printf("Has Acertado\n");
           acierto=1;
        }
        intentos++;
